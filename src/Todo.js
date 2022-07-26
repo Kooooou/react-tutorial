@@ -1,9 +1,12 @@
 // import React from 'react'
 
-const Todo = ({ todo }) => {
+const Todo = ({ task }) => {
   return (
     <div>
-    {todo.name}
+      <label>
+        <input type='checkbox' checked={task.completed} readOnly />
+      </label>
+    {task.name}
     </div>
   )
 }
