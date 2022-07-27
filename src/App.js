@@ -13,9 +13,15 @@ function App() {
     })
     todoNameRef.current.value = null;
   }
+  const toggleCheck = (id) => {
+    const newTodos = [...todos];
+    const todo = newTodos.find((todo) => todo.id === id);
+    todo.completed = !todo.completed;
+    setTodos(newTodos)
+  }
   return (
     <>
-    <TodoList todos={todos}/>
+    <TodoList todos={todos} toggle={toggleCheck}/>
     <input type='text' ref={todoNameRef}></input>
     <button onClick={AddTask}>タスクの追加</button>
     <button>タスクの削除</button>

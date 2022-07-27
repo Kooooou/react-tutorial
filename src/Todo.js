@@ -1,14 +1,22 @@
-// import React from 'react'
+import React from "react";
 
-const Todo = ({ task }) => {
+const Todo = ({ task, toggle }) => {
+  const handoleClick = () => {
+    toggle(task.id);
+  };
   return (
     <div>
       <label>
-        <input type='checkbox' checked={task.completed} readOnly />
+        <input
+          type="checkbox"
+          checked={task.completed}
+          readOnly
+          onChange={handoleClick}
+        />
+        {task.name}
       </label>
-    {task.name}
     </div>
-  )
-}
+  );
+};
 
-export default Todo
+export default Todo;
