@@ -1,7 +1,7 @@
 import React from "react";
 
 const Todo = ({ task, toggle }) => {
-  const handoleClick = () => {
+  const handleClick = () => {
     toggle(task.id);
   };
   return (
@@ -11,7 +11,7 @@ const Todo = ({ task, toggle }) => {
           type="checkbox"
           checked={task.completed}
           readOnly
-          onChange={handoleClick}
+          onChange={handleClick}
         />
         {task.name}
       </label>
