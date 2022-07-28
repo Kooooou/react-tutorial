@@ -18,7 +18,7 @@ function App() {
     const newTodos = [...todos];
     const todo = newTodos.find((todo) => todo.id === id);
     todo.completed = !todo.completed;
-    setTodos(newTodos);
+    setTodos([todo]);
     console.log(newTodos[0].completed);
   }
   const handleClear = () =>{
